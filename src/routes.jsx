@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
-import Customers from "./pages/Customers";
+import CreateCustomer from "./pages/CreateCustomer";
+import Customers from "./pages/ViewCustomers";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Dashboard } = require("./pages/Dashboard");
@@ -12,5 +13,9 @@ export const router = createBrowserRouter([
     {
         path: "/customers",
         element: <Layout children={<Customers />} />
+    },
+    {
+        path: "/create-customer",
+        element: <Layout children={<CreateCustomer  />} />
     }
 ])
