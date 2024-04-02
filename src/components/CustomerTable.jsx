@@ -1,3 +1,5 @@
+import { MdDelete, MdEdit } from "react-icons/md";
+
 export default function CustomerTable({ customers }) {
     return (
         <table className="table border mt-5">
@@ -12,14 +14,21 @@ export default function CustomerTable({ customers }) {
                 </tr>
             </thead>
             <tbody>
-                {customers.map((customer) =>
+                {customers.map((customer, id) =>
                     <tr key={customer.id}>
-                        <td>{customer.id}</td>
+                        <td>{id + 1}</td>
                         <td>{customer.name}</td>
                         <td>{customer.email}</td>
                         <td>{customer.phone}</td>
                         <td>{customer.accountStatus}</td>
-                        <td>Edit | Delete</td>
+                        <td>
+                            <a className="btn btn-outline-primary" style={{ marginRight: '3px' }}>
+                                <MdEdit />
+                            </a>
+                            <a className="btn btn-outline-danger">
+                                <MdDelete />
+                            </a>
+                        </td>
                     </tr>                        
                 )}
             </tbody>
